@@ -1,0 +1,2695 @@
+stackbitVersion: ~0.3.0
+dataDir: ''
+pagesDir: test/content
+models:
+  admin:
+    type: page
+    label: Admin
+    folder: admin
+    match: '*'
+    fields:
+      - type: string
+        name: type
+        label: Type
+      - type: list
+        name: outputs
+        label: Outputs
+        items:
+          type: string
+  home:
+    type: page
+    label: Home
+    folder: home
+    match: '*'
+    exclude:
+      - section.md
+    fields:
+      - type: string
+        name: type
+        label: Type
+      - type: boolean
+        name: headless
+        label: Headless
+  home_1:
+    type: page
+    label: Home 1
+    folder: home
+    match: '*'
+    exclude:
+      - index.md
+    fields:
+      - type: string
+        name: widget
+        label: Widget
+      - type: string
+        name: widget_id
+        label: Widget Id
+      - type: boolean
+        name: headless
+        label: Headless
+      - type: number
+        name: weight
+        label: Weight
+        subtype: int
+      - type: object
+        name: design
+        label: Design
+        fields:
+          - type: string
+            name: columns
+            label: Columns
+  config:
+    type: data
+    label: Config
+    file: test/config.yaml
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: baseurl
+        label: Baseurl
+      - type: object
+        name: module
+        label: Module
+        fields:
+          - type: list
+            name: imports
+            label: Imports
+            items:
+              type: object
+              fields:
+                - type: string
+                  name: path
+                  label: Path
+      - type: object
+        name: outputs
+        label: Outputs
+        fields:
+          - type: list
+            name: home
+            label: Home
+            items:
+              type: string
+      - type: boolean
+        name: disableAliases
+        label: Disable Aliases
+      - type: object
+        name: params
+        label: Params
+        fields:
+          - type: boolean
+            name: require_isotope
+            label: Require Isotope
+          - type: boolean
+            name: day_night
+            label: Day Night
+          - type: string
+            name: theme
+            label: Theme
+          - type: string
+            name: font
+            label: Font
+          - type: object
+            name: main_menu
+            label: Main Menu
+            fields:
+              - type: boolean
+                name: enable
+                label: Enable
+          - type: object
+            name: cms
+            label: Cms
+            fields:
+              - type: boolean
+                name: local_backend
+                label: Local Backend
+  config_1:
+    type: data
+    label: Config 1
+    file: themes/hello-world/config.yaml
+    fields:
+      - type: object
+        name: module
+        label: Module
+        fields:
+          - type: list
+            name: mounts
+            label: Mounts
+            items:
+              type: object
+              fields:
+                - type: string
+                  name: source
+                  label: Source
+                - type: string
+                  name: target
+                  label: Target
+  config_2:
+    type: data
+    label: Config 2
+    file: wowchemy/config.yaml
+    fields:
+      - type: object
+        name: markup
+        label: Markup
+        fields:
+          - type: string
+            name: _merge
+            label: Merge
+          - type: string
+            name: defaultMarkdownHandler
+            label: Default Markdown Handler
+          - type: object
+            name: goldmark
+            label: Goldmark
+            fields:
+              - type: object
+                name: renderer
+                label: Renderer
+                fields:
+                  - type: boolean
+                    name: unsafe
+                    label: Unsafe
+              - type: object
+                name: parser
+                label: Parser
+                fields:
+                  - type: object
+                    name: attribute
+                    label: Attribute
+                    fields:
+                      - type: boolean
+                        name: block
+                        label: Block
+                      - type: boolean
+                        name: title
+                        label: Title
+          - type: object
+            name: highlight
+            label: Highlight
+            fields:
+              - type: boolean
+                name: codeFences
+                label: Code Fences
+          - type: object
+            name: tableOfContents
+            label: Table Of Contents
+            fields:
+              - type: number
+                name: startLevel
+                label: Start Level
+                subtype: int
+              - type: number
+                name: endLevel
+                label: End Level
+                subtype: int
+      - type: object
+        name: mediaTypes
+        label: Media Types
+        fields:
+          - type: object
+            name: text/netlify
+            label: Text Netlify
+            fields:
+              - type: string
+                name: delimiter
+                label: Delimiter
+              - type: list
+                name: suffixes
+                label: Suffixes
+                items:
+                  type: string
+      - type: object
+        name: outputFormats
+        label: Output Formats
+        fields:
+          - type: object
+            name: headers
+            label: Headers
+            fields:
+              - type: string
+                name: baseName
+                label: Base Name
+              - type: boolean
+                name: isPlainText
+                label: Is Plain Text
+              - type: string
+                name: mediatype
+                label: Mediatype
+              - type: boolean
+                name: notAlternative
+                label: Not Alternative
+          - type: object
+            name: redirects
+            label: Redirects
+            fields:
+              - type: string
+                name: baseName
+                label: Base Name
+              - type: boolean
+                name: isPlainText
+                label: Is Plain Text
+              - type: string
+                name: mediatype
+                label: Mediatype
+              - type: boolean
+                name: notAlternative
+                label: Not Alternative
+      - type: object
+        name: module
+        label: Module
+        fields:
+          - type: object
+            name: hugoVersion
+            label: Hugo Version
+            fields:
+              - type: string
+                name: min
+                label: Min
+              - type: boolean
+                name: extended
+                label: Extended
+          - type: list
+            name: mounts
+            label: Mounts
+            items:
+              type: object
+              fields:
+                - type: string
+                  name: source
+                  label: Source
+                - type: string
+                  name: target
+                  label: Target
+      - type: object
+        name: params
+        label: Params
+        fields:
+          - type: string
+            name: theme
+            label: Theme
+          - type: string
+            name: font
+            label: Font
+          - type: string
+            name: date_format
+            label: Date Format
+          - type: string
+            name: time_format
+            label: Time Format
+          - type: string
+            name: address_format
+            label: Address Format
+  address_formats:
+    type: data
+    label: Address Formats
+    file: wowchemy/data/address_formats.toml
+    fields:
+      - type: object
+        name: en-us
+        label: En Us
+        fields:
+          - type: list
+            name: order
+            label: Order
+            items:
+              type: string
+          - type: list
+            name: delimiters
+            label: Delimiters
+            items:
+              type: string
+      - type: object
+        name: en-gb
+        label: En Gb
+        fields:
+          - type: list
+            name: order
+            label: Order
+            items:
+              type: string
+          - type: list
+            name: delimiters
+            label: Delimiters
+            items:
+              type: string
+      - type: object
+        name: de
+        label: De
+        fields:
+          - type: list
+            name: order
+            label: Order
+            items:
+              type: string
+          - type: list
+            name: delimiters
+            label: Delimiters
+            items:
+              type: markdown
+      - type: object
+        name: fr-fr
+        label: Fr Fr
+        fields:
+          - type: list
+            name: order
+            label: Order
+            items:
+              type: string
+          - type: list
+            name: delimiters
+            label: Delimiters
+            items:
+              type: markdown
+      - type: object
+        name: zh
+        label: Zh
+        fields:
+          - type: list
+            name: order
+            label: Order
+            items:
+              type: string
+          - type: list
+            name: delimiters
+            label: Delimiters
+            items:
+              type: string
+      - type: object
+        name: pt-br
+        label: Pt Br
+        fields:
+          - type: list
+            name: order
+            label: Order
+            items:
+              type: string
+          - type: list
+            name: delimiters
+            label: Delimiters
+            items:
+              type: markdown
+      - type: object
+        name: il
+        label: Il
+        fields:
+          - type: list
+            name: order
+            label: Order
+            items:
+              type: string
+          - type: list
+            name: delimiters
+            label: Delimiters
+            items:
+              type: string
+      - type: object
+        name: fi
+        label: Fi
+        fields:
+          - type: list
+            name: order
+            label: Order
+            items:
+              type: string
+          - type: list
+            name: delimiters
+            label: Delimiters
+            items:
+              type: string
+  assets:
+    type: data
+    label: Assets
+    file: wowchemy/data/assets.toml
+    fields:
+      - type: object
+        name: js
+        label: Js
+        fields:
+          - type: object
+            name: jQuery
+            label: J Query
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: highlight
+            label: Highlight
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: mathJax
+            label: Math Jax
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+              - type: boolean
+                name: async
+                label: Async
+          - type: object
+            name: isotope
+            label: Isotope
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: imagesLoaded
+            label: Images Loaded
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: gmaps
+            label: Gmaps
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: leaflet
+            label: Leaflet
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: fancybox
+            label: Fancybox
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: fuse
+            label: Fuse
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: mark
+            label: Mark
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: instantsearch
+            label: Instantsearch
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: anchor
+            label: Anchor
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: mermaid
+            label: Mermaid
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: cookieconsent
+            label: Cookieconsent
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: instantpage
+            label: Instantpage
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: plotly
+            label: Plotly
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: highlight_lang
+            label: Highlight Lang
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+      - type: object
+        name: css
+        label: Css
+        fields:
+          - type: object
+            name: fontAwesome
+            label: Font Awesome
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: academicons
+            label: Academicons
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: leaflet
+            label: Leaflet
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: fancybox
+            label: Fancybox
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: instantsearch
+            label: Instantsearch
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: instantsearchTheme
+            label: Instantsearch Theme
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: highlight
+            label: Highlight
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+          - type: object
+            name: cookieconsent
+            label: Cookieconsent
+            fields:
+              - type: string
+                name: version
+                label: Version
+              - type: string
+                name: sri
+                label: Sri
+              - type: string
+                name: url
+                label: Url
+  font:
+    type: data
+    label: Font
+    folder: wowchemy/data/fonts
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: google_fonts
+        label: Google Fonts
+      - type: string
+        name: heading_font
+        label: Heading Font
+      - type: string
+        name: body_font
+        label: Body Font
+      - type: string
+        name: nav_font
+        label: Nav Font
+      - type: string
+        name: mono_font
+        label: Mono Font
+  languages:
+    type: data
+    label: Languages
+    file: wowchemy/data/i18n/languages.yaml
+    fields:
+      - type: string
+        name: ar
+        label: Ar
+      - type: string
+        name: ca
+        label: Ca
+      - type: string
+        name: cs
+        label: Cs
+      - type: string
+        name: da
+        label: Da
+      - type: string
+        name: de
+        label: De
+      - type: string
+        name: el
+        label: El
+      - type: string
+        name: en
+        label: En
+      - type: string
+        name: es
+        label: Es
+      - type: string
+        name: et
+        label: Et
+      - type: string
+        name: eu
+        label: Eu
+      - type: string
+        name: fa
+        label: Fa
+      - type: string
+        name: fi
+        label: Fi
+      - type: string
+        name: fr
+        label: Fr
+      - type: string
+        name: he
+        label: He
+      - type: string
+        name: hu
+        label: Hu
+      - type: string
+        name: id
+        label: Id
+      - type: string
+        name: it
+        label: It
+      - type: string
+        name: ja
+        label: Ja
+      - type: string
+        name: km
+        label: Km
+      - type: string
+        name: ko
+        label: Ko
+      - type: string
+        name: lt
+        label: Lt
+      - type: string
+        name: lv
+        label: Lv
+      - type: string
+        name: nb
+        label: Nb
+      - type: string
+        name: nl
+        label: Nl
+      - type: string
+        name: pl
+        label: Pl
+      - type: string
+        name: pt
+        label: Pt
+      - type: string
+        name: ro
+        label: Ro
+      - type: string
+        name: ru
+        label: Ru
+      - type: string
+        name: so
+        label: So
+      - type: string
+        name: sv
+        label: Sv
+      - type: string
+        name: tr
+        label: Tr
+      - type: string
+        name: uk
+        label: Uk
+      - type: string
+        name: vi
+        label: Vi
+      - type: string
+        name: zh
+        label: Zh
+      - type: string
+        name: zh-hant
+        label: Zh Hant
+  rtl:
+    type: data
+    label: Rtl
+    file: wowchemy/data/i18n/rtl.toml
+    fields:
+      - type: list
+        name: rtl
+        label: Rtl
+        items:
+          type: string
+  page_sharer:
+    type: data
+    label: Page Sharer
+    file: wowchemy/data/page_sharer.toml
+    fields:
+      - type: list
+        name: buttons
+        label: Buttons
+        items:
+          type: object
+          fields:
+            - type: string
+              name: id
+              label: Id
+            - type: string
+              name: url
+              label: Url
+            - type: string
+              name: title
+              label: Title
+            - type: string
+              name: icon_pack
+              label: Icon Pack
+            - type: string
+              name: icon
+              label: Icon
+            - type: boolean
+              name: enable
+              label: Enable
+  publication_types:
+    type: data
+    label: Publication Types
+    file: wowchemy/data/publication_types.toml
+    fields:
+      - type: list
+        name: types
+        label: Types
+        items:
+          type: string
+  cyberpunk:
+    type: data
+    label: Cyberpunk
+    file: wowchemy/data/themes/cyberpunk.toml
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: boolean
+        name: is_light
+        label: Is Light
+      - type: string
+        name: primary
+        label: Primary
+      - type: string
+        name: menu_primary
+        label: Menu Primary
+      - type: string
+        name: menu_text
+        label: Menu Text
+      - type: string
+        name: menu_text_active
+        label: Menu Text Active
+      - type: string
+        name: menu_title
+        label: Menu Title
+      - type: object
+        name: dark
+        label: Dark
+        fields:
+          - type: string
+            name: menu_primary
+            label: Menu Primary
+          - type: string
+            name: menu_text
+            label: Menu Text
+          - type: string
+            name: menu_text_active
+            label: Menu Text Active
+          - type: string
+            name: menu_title
+            label: Menu Title
+          - type: string
+            name: background
+            label: Background
+          - type: string
+            name: home_section_odd
+            label: Home Section Odd
+          - type: string
+            name: home_section_even
+            label: Home Section Even
+  earth:
+    type: data
+    label: Earth
+    file: wowchemy/data/themes/earth.toml
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: boolean
+        name: is_light
+        label: Is Light
+      - type: string
+        name: primary
+        label: Primary
+      - type: string
+        name: menu_primary
+        label: Menu Primary
+      - type: string
+        name: menu_text
+        label: Menu Text
+      - type: string
+        name: menu_text_active
+        label: Menu Text Active
+      - type: string
+        name: menu_title
+        label: Menu Title
+      - type: string
+        name: link
+        label: Link
+      - type: string
+        name: link_hover
+        label: Link Hover
+      - type: string
+        name: link_decoration
+        label: Link Decoration
+      - type: string
+        name: home_section_odd
+        label: Home Section Odd
+      - type: string
+        name: home_section_even
+        label: Home Section Even
+      - type: string
+        name: font
+        label: Font
+  theme:
+    type: data
+    label: Theme
+    folder: wowchemy/data/themes
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: boolean
+        name: light
+        label: Light
+      - type: string
+        name: primary
+        label: Primary
+      - type: string
+        name: menu_primary
+        label: Menu Primary
+      - type: string
+        name: menu_text
+        label: Menu Text
+      - type: string
+        name: menu_text_active
+        label: Menu Text Active
+      - type: string
+        name: menu_title
+        label: Menu Title
+      - type: string
+        name: home_section_odd
+        label: Home Section Odd
+      - type: string
+        name: home_section_even
+        label: Home Section Even
+      - type: object
+        name: dark
+        label: Dark
+        fields:
+          - type: string
+            name: link
+            label: Link
+          - type: string
+            name: link_hover
+            label: Link Hover
+      - type: string
+        name: background
+        label: Background
+      - type: string
+        name: font
+        label: Font
+  wowchemy:
+    type: data
+    label: Wowchemy
+    file: wowchemy/data/wowchemy.toml
+    fields:
+      - type: string
+        name: version
+        label: Version
+  ar:
+    type: data
+    label: Ar
+    file: wowchemy/i18n/ar.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  ca:
+    type: data
+    label: Ca
+    file: wowchemy/i18n/ca.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  cs:
+    type: data
+    label: Cs
+    file: wowchemy/i18n/cs.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  da:
+    type: data
+    label: Da
+    file: wowchemy/i18n/da.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  de:
+    type: data
+    label: De
+    file: wowchemy/i18n/de.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  el:
+    type: data
+    label: El
+    file: wowchemy/i18n/el.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  en:
+    type: data
+    label: En
+    file: wowchemy/i18n/en.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  es:
+    type: data
+    label: Es
+    file: wowchemy/i18n/es.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  et:
+    type: data
+    label: Et
+    file: wowchemy/i18n/et.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  eu:
+    type: data
+    label: Eu
+    file: wowchemy/i18n/eu.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  fa:
+    type: data
+    label: Fa
+    file: wowchemy/i18n/fa.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  fi:
+    type: data
+    label: Fi
+    file: wowchemy/i18n/fi.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  fr:
+    type: data
+    label: Fr
+    file: wowchemy/i18n/fr.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  he:
+    type: data
+    label: He
+    file: wowchemy/i18n/he.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  hu:
+    type: data
+    label: Hu
+    file: wowchemy/i18n/hu.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  id:
+    type: data
+    label: Id
+    file: wowchemy/i18n/id.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  it:
+    type: data
+    label: It
+    file: wowchemy/i18n/it.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  ja:
+    type: data
+    label: Ja
+    file: wowchemy/i18n/ja.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  km:
+    type: data
+    label: Km
+    file: wowchemy/i18n/km.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  ko:
+    type: data
+    label: Ko
+    file: wowchemy/i18n/ko.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  lt:
+    type: data
+    label: Lt
+    file: wowchemy/i18n/lt.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  lv:
+    type: data
+    label: Lv
+    file: wowchemy/i18n/lv.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  nb:
+    type: data
+    label: Nb
+    file: wowchemy/i18n/nb.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  nl:
+    type: data
+    label: Nl
+    file: wowchemy/i18n/nl.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  pl:
+    type: data
+    label: Pl
+    file: wowchemy/i18n/pl.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  pt:
+    type: data
+    label: Pt
+    file: wowchemy/i18n/pt.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  ro:
+    type: data
+    label: Ro
+    file: wowchemy/i18n/ro.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  ru:
+    type: data
+    label: Ru
+    file: wowchemy/i18n/ru.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  so:
+    type: data
+    label: So
+    file: wowchemy/i18n/so.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  sv:
+    type: data
+    label: Sv
+    file: wowchemy/i18n/sv.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  tr:
+    type: data
+    label: Tr
+    file: wowchemy/i18n/tr.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  uk:
+    type: data
+    label: Uk
+    file: wowchemy/i18n/uk.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  vi:
+    type: data
+    label: Vi
+    file: wowchemy/i18n/vi.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  zh_hant:
+    type: data
+    label: Zh Hant
+    file: wowchemy/i18n/zh-Hant.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  zh:
+    type: data
+    label: Zh
+    file: wowchemy/i18n/zh.yaml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: id
+          label: Id
+        - type: string
+          name: translation
+          label: Translation
+  config_3:
+    type: data
+    label: Config 3
+    file: wowchemy-cms/config.yaml
+    fields:
+      - type: object
+        name: module
+        label: Module
+        fields:
+          - type: list
+            name: mounts
+            label: Mounts
+            items:
+              type: object
+              fields:
+                - type: string
+                  name: source
+                  label: Source
+                - type: string
+                  name: target
+                  label: Target
+      - type: object
+        name: outputFormats
+        label: Output Formats
+        fields:
+          - type: object
+            name: wowchemycms_config
+            label: Wowchemycms Config
+            fields:
+              - type: string
+                name: baseName
+                label: Base Name
+              - type: boolean
+                name: isPlainText
+                label: Is Plain Text
+              - type: string
+                name: mediatype
+                label: Mediatype
+              - type: boolean
+                name: notAlternative
+                label: Not Alternative
+      - type: object
+        name: mediaTypes
+        label: Media Types
+        fields:
+          - type: object
+            name: application/yaml
+            label: Application Yaml
+            fields:
+              - type: list
+                name: suffixes
+                label: Suffixes
+                items:
+                  type: string
+  wowchemy_cms_tpl:
+    type: data
+    label: Wowchemy Cms Tpl
+    file: wowchemy-cms/data/wowchemy_cms_tpl.yaml
+    fields:
+      - type: object
+        name: backend
+        label: Backend
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: branch
+            label: Branch
+          - type: boolean
+            name: squash_merges
+            label: Squash Merges
+      - type: string
+        name: media_folder
+        label: Media Folder
+      - type: string
+        name: public_folder
+        label: Public Folder
+      - type: list
+        name: collections
+        label: Collections
+        items:
+          type: model
+          models:
+            - object_5i9f3us5ls
+            - object_crbqd5gmnj
+            - object_u3j4ah3a61
+  object_jaraw8dvb7:
+    type: object
+    label: Object 1
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: number
+        name: default
+        label: Default
+        subtype: int
+      - type: string
+        name: value_type
+        label: Value Type
+      - type: number
+        name: min
+        label: Min
+        subtype: int
+      - type: number
+        name: max
+        label: Max
+        subtype: int
+      - type: number
+        name: step
+        label: Step
+        subtype: float
+      - type: boolean
+        name: required
+        label: Required
+  object_8fsjsd62n1:
+    type: object
+    label: Object 2
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: required
+        label: Required
+      - type: string
+        name: media_folder
+        label: Media Folder
+      - type: string
+        name: public_folder
+        label: Public Folder
+      - type: object
+        name: media_library
+        label: Media Library
+        fields:
+          - type: object
+            name: config
+            label: Config
+            fields:
+              - type: boolean
+                name: multiple
+                label: Multiple
+      - type: boolean
+        name: default
+        label: Default
+  object_ootozow2x2:
+    type: object
+    label: Object 3
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: enableAlpha
+        label: Enable Alpha
+      - type: boolean
+        name: allowInput
+        label: Allow Input
+      - type: boolean
+        name: required
+        label: Required
+  object_ls3jb3tb56:
+    type: object
+    label: Object 4
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: number
+        name: default
+        label: Default
+        subtype: int
+      - type: string
+        name: value_type
+        label: Value Type
+      - type: number
+        name: min
+        label: Min
+        subtype: int
+      - type: number
+        name: max
+        label: Max
+        subtype: int
+      - type: number
+        name: step
+        label: Step
+        subtype: int
+  object_9mci00hr5u:
+    type: object
+    label: Object 5
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: boolean
+        name: required
+        label: Required
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: default
+        label: Default
+      - type: list
+        name: fields
+        label: Fields
+        items:
+          type: object
+          fields:
+            - type: string
+              name: label
+              label: Label
+            - type: string
+              name: name
+              label: Name
+            - type: string
+              name: widget
+              label: Widget
+            - type: string
+              name: default
+              label: Default
+            - type: boolean
+              name: required
+              label: Required
+            - type: list
+              name: fields
+              label: Fields
+              items:
+                type: model
+                models:
+                  - object_jaraw8dvb7
+                  - object_8fsjsd62n1
+                  - object_ootozow2x2
+  object_7gllxt13qe:
+    type: object
+    label: Object 6
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: string
+        name: default
+        label: Default
+  object_3wimh96inz:
+    type: object
+    label: Object 7
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: multiple
+        label: Multiple
+      - type: list
+        name: options
+        label: Options
+        items:
+          type: object
+          fields:
+            - type: string
+              name: label
+              label: Label
+            - type: string
+              name: value
+              label: Value
+  object_loyhe2opw9:
+    type: object
+    label: Object 8
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: required
+        label: Required
+  object_f2ccpcluv1:
+    type: object
+    label: Object 9
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: list
+        name: fields
+        label: Fields
+        items:
+          type: object
+          fields:
+            - type: string
+              name: label
+              label: Label
+            - type: string
+              name: name
+              label: Name
+            - type: string
+              name: widget
+              label: Widget
+            - type: boolean
+              name: default
+              label: Default
+            - type: boolean
+              name: required
+              label: Required
+  object_r9w2d7q796:
+    type: object
+    label: Object 10
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: required
+        label: Required
+  object_eszrdjpxxo:
+    type: object
+    label: Object 11
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: boolean
+        name: required
+        label: Required
+      - type: string
+        name: widget
+        label: Widget
+      - type: list
+        name: fields
+        label: Fields
+        items:
+          type: object
+          fields:
+            - type: string
+              name: label
+              label: Label
+            - type: string
+              name: name
+              label: Name
+            - type: string
+              name: widget
+              label: Widget
+            - type: string
+              name: value_type
+              label: Value Type
+            - type: boolean
+              name: required
+              label: Required
+  object_07yih2ggkn:
+    type: object
+    label: Object 12
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: string
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+      - type: object
+        name: media_library
+        label: Media Library
+        fields:
+          - type: object
+            name: config
+            label: Config
+            fields:
+              - type: boolean
+                name: multiple
+                label: Multiple
+      - type: list
+        name: fields
+        label: Fields
+        items:
+          type: model
+          models:
+            - object_3wimh96inz
+            - object_loyhe2opw9
+            - object_f2ccpcluv1
+            - object_r9w2d7q796
+            - object_eszrdjpxxo
+  object_mvo8i02zqs:
+    type: object
+    label: Object 13
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: default
+        label: Default
+  object_rp1837a5e1:
+    type: object
+    label: Object 14
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: string
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+      - type: object
+        name: media_library
+        label: Media Library
+        fields:
+          - type: object
+            name: config
+            label: Config
+            fields:
+              - type: boolean
+                name: multiple
+                label: Multiple
+  object_16s9xrd86y:
+    type: object
+    label: Object 15
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+  object_ms5c0iz2gv:
+    type: object
+    label: Object 16
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: string
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+      - type: object
+        name: media_library
+        label: Media Library
+        fields:
+          - type: object
+            name: config
+            label: Config
+            fields:
+              - type: boolean
+                name: multiple
+                label: Multiple
+  object_ifizea53hs:
+    type: object
+    label: Object 17
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+  object_hzk8e6zayl:
+    type: object
+    label: Object 18
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: multiple
+        label: Multiple
+      - type: boolean
+        name: required
+        label: Required
+      - type: list
+        name: options
+        label: Options
+        items:
+          type: object
+          fields:
+            - type: string
+              name: label
+              label: Label
+            - type: string
+              name: value
+              label: Value
+  object_sf2mdd3qns:
+    type: object
+    label: Object 19
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: string
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+      - type: object
+        name: media_library
+        label: Media Library
+        fields:
+          - type: object
+            name: config
+            label: Config
+            fields:
+              - type: boolean
+                name: multiple
+                label: Multiple
+  object_ovjatj8gi0:
+    type: object
+    label: Object 20
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+  object_zkiek8jtwa:
+    type: object
+    label: Object 21
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: multiple
+        label: Multiple
+      - type: boolean
+        name: required
+        label: Required
+      - type: list
+        name: options
+        label: Options
+        items:
+          type: object
+          fields:
+            - type: string
+              name: label
+              label: Label
+            - type: string
+              name: value
+              label: Value
+  object_bd633sfvrk:
+    type: object
+    label: Object 22
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: boolean
+        name: required
+        label: Required
+      - type: string
+        name: widget
+        label: Widget
+      - type: list
+        name: fields
+        label: Fields
+        items:
+          type: model
+          models:
+            - object_sf2mdd3qns
+            - object_ovjatj8gi0
+            - object_zkiek8jtwa
+      - type: boolean
+        name: default
+        label: Default
+  object_28w826j4k4:
+    type: object
+    label: Object 23
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: string
+        name: default
+        label: Default
+  object_h7lx3ezbf6:
+    type: object
+    label: Object 24
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: string
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+      - type: object
+        name: media_library
+        label: Media Library
+        fields:
+          - type: object
+            name: config
+            label: Config
+            fields:
+              - type: boolean
+                name: multiple
+                label: Multiple
+  object_ts3wd8jf5f:
+    type: object
+    label: Object 25
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+  object_bedrro5pdh:
+    type: object
+    label: Object 26
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: boolean
+        name: required
+        label: Required
+      - type: list
+        name: default
+        label: Default
+        items:
+          type: string
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: multiple
+        label: Multiple
+      - type: list
+        name: options
+        label: Options
+        items:
+          type: object
+          fields:
+            - type: string
+              name: label
+              label: Label
+            - type: string
+              name: value
+              label: Value
+      - type: list
+        name: fields
+        label: Fields
+        items:
+          type: model
+          models:
+            - object_h7lx3ezbf6
+            - object_ts3wd8jf5f
+  object_gh43pmgii9:
+    type: object
+    label: Object 27
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+  object_9gpzcl0e87:
+    type: object
+    label: Object 28
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: string
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+      - type: object
+        name: media_library
+        label: Media Library
+        fields:
+          - type: object
+            name: config
+            label: Config
+            fields:
+              - type: boolean
+                name: multiple
+                label: Multiple
+  object_lvx51sccf8:
+    type: object
+    label: Object 29
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+  object_mny2s7haqs:
+    type: object
+    label: Object 30
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: required
+        label: Required
+      - type: string
+        name: default
+        label: Default
+  object_6gp3gecai0:
+    type: object
+    label: Object 31
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+      - type: list
+        name: fields
+        label: Fields
+        items:
+          type: model
+          models:
+            - object_rp1837a5e1
+            - object_16s9xrd86y
+  object_rsylvc0rrd:
+    type: object
+    label: Object 32
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+      - type: list
+        name: fields
+        label: Fields
+        items:
+          type: model
+          models:
+            - object_ms5c0iz2gv
+            - object_ifizea53hs
+            - object_hzk8e6zayl
+  object_e0uqfxm9yp:
+    type: object
+    label: Object 33
+    fields:
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: widget
+        label: Widget
+      - type: boolean
+        name: default
+        label: Default
+      - type: boolean
+        name: required
+        label: Required
+      - type: list
+        name: fields
+        label: Fields
+        items:
+          type: model
+          models:
+            - object_9gpzcl0e87
+            - object_lvx51sccf8
+            - object_mny2s7haqs
+  object_5i9f3us5ls:
+    type: object
+    label: Object 34
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: folder
+        label: Folder
+      - type: string
+        name: path
+        label: Path
+      - type: string
+        name: media_folder
+        label: Media Folder
+      - type: string
+        name: public_folder
+        label: Public Folder
+      - type: string
+        name: summary
+        label: Summary
+      - type: string
+        name: identifier_field
+        label: Identifier Field
+      - type: boolean
+        name: create
+        label: Create
+      - type: list
+        name: fields
+        label: Fields
+        items:
+          type: model
+          models:
+            - object_ls3jb3tb56
+            - object_9mci00hr5u
+            - object_7gllxt13qe
+  object_crbqd5gmnj:
+    type: object
+    label: Object 35
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: label
+        label: Label
+      - type: string
+        name: label_singular
+        label: Label Singular
+      - type: string
+        name: folder
+        label: Folder
+      - type: string
+        name: path
+        label: Path
+      - type: object
+        name: filter
+        label: Filter
+        fields:
+          - type: string
+            name: field
+            label: Field
+      - type: boolean
+        name: create
+        label: Create
+      - type: list
+        name: fields
+        label: Fields
+        items:
+          type: model
+          models:
+            - object_07yih2ggkn
+            - object_mvo8i02zqs
+            - object_6gp3gecai0
+            - object_rsylvc0rrd
+            - object_bd633sfvrk
+            - object_28w826j4k4
+            - object_bedrro5pdh
+            - object_gh43pmgii9
+            - object_e0uqfxm9yp
+  object_u3j4ah3a61:
+    type: object
+    label: Object 36
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: label
+        label: Label
+      - type: list
+        name: files
+        label: Files
+        items:
+          type: object
+          fields:
+            - type: string
+              name: file
+              label: File
+            - type: string
+              name: label
+              label: Label
+            - type: string
+              name: name
+              label: Name
+            - type: list
+              name: fields
+              label: Fields
+              items:
+                type: object
+                fields:
+                  - type: string
+                    name: label
+                    label: Label
+                  - type: string
+                    name: name
+                    label: Name
+                  - type: boolean
+                    name: required
+                    label: Required
+                  - type: string
+                    name: widget
+                    label: Widget
+                  - type: boolean
+                    name: default
+                    label: Default
